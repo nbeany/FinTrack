@@ -1,4 +1,4 @@
-# Finance Tracker API
+# Finance Tracker
 
 A comprehensive Node.js backend API for personal finance management, built with Express, PostgreSQL, and Sequelize. Track your income, expenses, investments, and budgets all in one place.
 
