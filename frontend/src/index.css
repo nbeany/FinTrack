@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 35%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 0% 25%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 0 0% 15%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 0 0% 30%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 0%;
+
+    --radius: 0.75rem;
+
+    --chart-income: 0 0% 15%;
+    --chart-expense: 0 0% 45%;
+    --chart-investment: 0 0% 30%;
+    --chart-budget: 0 0% 60%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 15%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(0 0% 25%) 0%, hsl(0 0% 40%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --gradient-glass: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%);
+
+    --shadow-glow: 0 0 40px -12px rgba(0, 0, 0, 0.2);
+    --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.08);
+    --shadow-elevated: 0 12px 40px -12px rgba(0, 0, 0, 0.12);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 0 0% 0%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 0% 70%;
+    --destructive-foreground: 0 0% 5%;
+
+    --success: 0 0% 80%;
+    --success-foreground: 0 0% 5%;
+
+    --warning: 0 0% 60%;
+    --warning-foreground: 0 0% 5%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 14%;
+    --ring: 0 0% 98%;
+
+    --chart-income: 0 0% 80%;
+    --chart-expense: 0 0% 50%;
+    --chart-investment: 0 0% 65%;
+    --chart-budget: 0 0% 35%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 80%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(0 0% 70%) 0%, hsl(0 0% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%) 0%, hsl(0 0% 6%) 100%);
+    --gradient-glass: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+
+    --shadow-glow: 0 0 40px -12px rgba(255, 255, 255, 0.1);
+    --shadow-card: 0 8px 32px -8px rgba(0, 0, 0, 0.5);
+    --shadow-elevated: 0 16px 48px -16px rgba(0, 0, 0, 0.6);
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+    background: var(--gradient-glass);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
